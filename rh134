@@ -1,0 +1,92 @@
+#!/bin/bash
+#Acep Triana
+#Sistem Informasi
+#Implementasi Modul Chapter 1 & 2
+
+
+chapter1="console-review"
+chapter2="scheduling-tempfiles"
+chapter3="logs-review"
+chapter4="archive-review"
+chapter5="tuning-review"
+chapter6="selinux-review"
+chapter7="storage-review"
+chapter8="lvm-review"
+chapter9="netstorage-review"
+chapter10="boot-review"
+chapter11="netsecurity-review"
+chapter12="installing-review"
+chapter13="containers-services"
+chapter14="rhcsa-compreview4"
+
+service1="lab start"
+service2="lab grade"
+service3="lab finish"
+
+clear
+
+echo "=============================================="
+echo "Arthur : Acep Triana"
+echo "Email  : aceptriana@infinitelearningstudent.id"
+echo "Type   : RH134 Edition 5"
+echo "=============================================="
+
+while true; do
+    echo -e "\nMenu Lab "
+    echo "1.  Chapter 1"
+    echo "2.  Chapter 2"
+    echo "3.  Chapter 3"
+    echo "4.  Chapter 4"
+    echo "5.  Chapter 5"
+    echo "6.  Chapter 6"
+    echo "7.  Chapter 7"
+    echo "8.  Chapter 8"
+    echo "9.  Chapter 9"
+    echo "10. Chapter 10"
+    echo "11. Chapter 11"
+    echo "12. Chapter 12"
+    echo "13. Chapter 13"
+    echo "14. Chapter 14"
+    echo -n "Pilih Lab = "
+    read lab
+
+    case $lab in
+        1) chapter=$chapter1;;
+        2) chapter=$chapter2;;
+        3) chapter=$chapter3;;
+        4) chapter=$chapter4;;
+        5) chapter=$chapter5;;
+        6) chapter=$chapter6;;
+        7) chapter=$chapter7;;
+        8) chapter=$chapter8;;
+        9) chapter=$chapter9;;
+        10) chapter=$chapter10;;
+        11) chapter=$chapter11;;
+        12) chapter=$chapter12;;
+        13) chapter=$chapter13;;
+        14) chapter=$chapter14;;
+        *) echo "Pilihan tidak valid"; continue;;
+    esac
+
+    echo -e "\nMenu Service "
+    echo "1. Start Lab"
+    echo "2. Grade Lab"
+    echo "3. Finish Lab"
+    echo -n "Pilih Service = "
+    read service
+
+    case $service in
+        1) service=$service1;;
+        2) service=$service2;;
+        3) service=$service3;;
+        *) echo "Pilihan tidak valid"; continue;;
+    esac
+
+    echo "berhasil menjalankan perintah $service $chapter"
+    $service $chapter
+    echo -n "Apakah Anda ingin melanjutkan? (y/n): "
+    read cont
+    if [ "$cont" != "y" ]; then
+        break
+    fi
+done
